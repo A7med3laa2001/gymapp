@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gymapp/Constants/colors_gym.dart';
-import 'package:gymapp/Screens/onboarding_screen.dart';
+import 'package:gymapp/constants/colors_gym.dart';
+import 'package:gymapp/views/onboarding_view/onboarding_screen.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -26,7 +26,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: primaryColor,
+      backgroundColor: backgroundColor,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -35,7 +35,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
               'assets/images/Mask group.png',
             ),
             const SizedBox(
-              height: 8,
+              height: 15,
             ),
             Image.asset(
               'assets/images/Logo.png',

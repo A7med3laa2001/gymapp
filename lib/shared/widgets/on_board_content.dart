@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gymapp/Constants/colors_gym.dart';
+import 'package:gymapp/constants/colors_gym.dart';
 
 class OnBoardContent extends StatelessWidget {
   const OnBoardContent({
@@ -22,9 +22,9 @@ class OnBoardContent extends StatelessWidget {
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(image), fit: BoxFit.fitWidth)),
-            child: Text('')),
-        SizedBox(
-          height: 20,
+            child: const Text('')),
+        const SizedBox(
+          height: 30,
         ),
         buildText(text: description),
         buildText(text: descriptionContinue),

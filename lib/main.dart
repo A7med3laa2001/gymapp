@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'Screens/splash_view/widgets/splash_view_body.dart';
+import 'views/gender_view/gender_view.dart';
 
 void main() {
   runApp(const GymApp());
@@ -17,7 +17,7 @@ class GymApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SplashViewBody(),
+      home: const GenderView(),
     );
   }
 }

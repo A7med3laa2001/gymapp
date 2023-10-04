@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gymapp/Constants/colors_gym.dart';
-import 'package:gymapp/Widgets/on_board_content.dart';
+import 'package:gymapp/constants/colors_gym.dart';
+import 'package:gymapp/shared/widgets/on_board_content.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
@@ -27,19 +28,34 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: primaryColor,
+      backgroundColor: backgroundColor,
       body: SafeArea(
         child: Column(
           children: [
             Expanded(
               child: PageView.builder(
                 itemCount: data.length,
-                  controller: pageController,
-                  itemBuilder: (context, index) => OnBoardContent(
-                        image: data[index].image,
-                        description: data[index].description,
-                        descriptionContinue: data[index].descriptionContinue,
-                      )),
+                controller: pageController,
+                itemBuilder: (context, index) => OnBoardContent(
+                  image: data[index].image,
+                  description: data[index].description,
+                  descriptionContinue: data[index].descriptionContinue,
+                ),
+              ),
+            ),
+            SmoothPageIndicator(
+              controller: pageController, // PageController
+              count: 3,
+              effect: ExpandingDotsEffect(
+                dotHeight: 4,
+                dotWidth: 18,
+                dotColor: unselectedDotsColor,
+                activeDotColor: primaryColor,
+              ), // your preferred effect
+              onDotClicked: (index) {},
+            ),
+            const SizedBox(
+              height: 30,
             ),
           ],
         ),
