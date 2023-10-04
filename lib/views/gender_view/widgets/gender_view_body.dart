@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gymapp/constants/colors_gym.dart';
 import 'package:gymapp/shared/widgets/custom_next_button.dart';
+import 'package:gymapp/views/age_view/age_view.dart';
 
 class GenderViewBody extends StatefulWidget {
   const GenderViewBody({super.key});
@@ -15,81 +16,86 @@ class _GenderViewBodyState extends State<GenderViewBody> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Spacer(
-            flex: 2,
-          ),
-          const Text(
-            'TELL US ABOUT YOURSELF!',
-            style: TextStyle(
-              fontSize: 28,
-              fontWeight: FontWeight.w800,
-              color: Colors.white,
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 25),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Spacer(
+              flex: 2,
             ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.8,
-            child: const Text(
-              textAlign: TextAlign.center,
-              'TO GIVE YOU A BETTER EXPERIENCE WE NEED TO KNOW YOUR GENDER',
+            const Text(
+              'TELL US ABOUT YOURSELF!',
               style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w500,
+                fontSize: 28,
+                fontWeight: FontWeight.w800,
                 color: Colors.white,
               ),
             ),
-          ),
-          const Spacer(
-            flex: 3,
-          ),
-          GestureDetector(
-            onTap: () {
-              isClicked = !isClicked;
-              setState(() {});
-            },
-            child: CustomGenderSelection(
-              isClicked: isClicked,
-              icon: Icons.male_rounded,
-              gender: 'Male',
+            const SizedBox(
+              height: 20,
             ),
-          ),
-          const SizedBox(
-            height: 50,
-          ),
-          GestureDetector(
-            onTap: () {
-              isClicked = !isClicked;
-              setState(() {});
-            },
-            child: CustomGenderSelection(
-              isClicked: !isClicked,
-              icon: Icons.female_rounded,
-              gender: 'Female',
-            ),
-          ),
-          const Spacer(
-            flex: 3,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 30),
-                child: CustomNextButton(
-                  onPressed: () {},
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.8,
+              child: const Text(
+                textAlign: TextAlign.center,
+                'TO GIVE YOU A BETTER EXPERIENCE WE NEED TO KNOW YOUR GENDER',
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white,
                 ),
               ),
-            ],
-          ),
-          const Spacer(
-            flex: 1,
-          ),
-        ],
+            ),
+            const Spacer(
+              flex: 3,
+            ),
+            GestureDetector(
+              onTap: () {
+                isClicked = !isClicked;
+                setState(() {});
+              },
+              child: CustomGenderSelection(
+                isClicked: !isClicked,
+                icon: Icons.male_rounded,
+                gender: 'Male',
+              ),
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            GestureDetector(
+              onTap: () {
+                isClicked = !isClicked;
+                setState(() {});
+              },
+              child: CustomGenderSelection(
+                isClicked: isClicked,
+                icon: Icons.female_rounded,
+                gender: 'Female',
+              ),
+            ),
+            const Spacer(
+              flex: 3,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 30),
+                  child: CustomNextButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const AgeView();
+                      }));
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

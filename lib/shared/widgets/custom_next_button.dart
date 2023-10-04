@@ -11,10 +11,7 @@ class CustomNextButton extends StatelessWidget {
     return SizedBox(
       width: 130,
       child: MaterialButton(
-        padding: const EdgeInsets.symmetric(
-          vertical: 8,
-          horizontal: 15,
-        ),
+        padding: const EdgeInsets.only(top: 8, bottom: 8, left: 10),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
         ),
