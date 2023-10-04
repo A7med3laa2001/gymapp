@@ -40,6 +40,8 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   gender_picker: ^1.1.0
   numberpicker: ^2.1.2
+  vertical_weight_slider: ^2.5.1
+  flutter_svg: ^2.0.7
 
 dev_dependencies:
   flutter_test:

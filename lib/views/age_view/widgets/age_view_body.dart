@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gymapp/constants/colors_gym.dart';
 import 'package:gymapp/shared/widgets/custom_back_button.dart';
 import 'package:gymapp/shared/widgets/custom_next_button.dart';
+import 'package:gymapp/views/weight_view/weight_view.dart';
 import 'package:numberpicker/numberpicker.dart';
 
 class AgeViewBody extends StatefulWidget {
@@ -82,7 +83,12 @@ class _AgeViewBodyState extends State<AgeViewBody> {
                 children: [
                   const CustomBackButton(),
                   CustomNextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const WeightView();
+                      }));
+                    },
                   ),
                 ],
               ),
