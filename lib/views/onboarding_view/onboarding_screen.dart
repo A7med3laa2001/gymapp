@@ -39,9 +39,25 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             color: primaryColor,
             size: 30,
           ),
+          showSkipButton: true,
+          skip: Text(
+            'Skip',
+            style: TextStyle(
+              color: primaryColor,
+              fontSize: 20,
+            ),
+          ),
+          onSkip: () {
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) {
+              return const GenderView();
+            }));
+          },
           key: introKey,
           globalBackgroundColor: backgroundColor,
           autoScrollDuration: 3000,
+          allowImplicitScrolling: true,
+          animationDuration: 500,
           dotsDecorator: DotsDecorator(
             activeColor: primaryColor,
             activeSize: const Size(40, 4),
