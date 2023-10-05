@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gymapp/constants/colors_gym.dart';
-import 'package:gymapp/shared/widgets/on_board_content.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:gymapp/views/gender_view/gender_view.dart';
+import 'package:introduction_screen/introduction_screen.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
@@ -12,100 +12,139 @@ class OnBoardingScreen extends StatefulWidget {
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   late PageController pageController;
-  bool isLastPage = false;
-  int currentIndex = 0;
 
-  @override
-  void initState() {
-    pageController = PageController(initialPage: 0);
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    pageController.dispose();
-    super.dispose();
-  }
+  final introKey = GlobalKey<IntroductionScreenState>();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: backgroundColor,
-      body: SafeArea(
-        child: Column(
-          children: [
-            Expanded(
-              child: PageView.builder(
-                itemCount: data.length,
-                controller: pageController,
-                itemBuilder: (context, index) => OnBoardContent(
-                  image: data[index].image,
-                  description: data[index].description,
-                  descriptionContinue: data[index].descriptionContinue,
-                ),
-              ),
-            ),
-            MaterialButton(
-              onPressed: () {},
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: backgroundColor,
+        body: IntroductionScreen(
+          done: Text(
+            'Start',
+            style: TextStyle(
               color: primaryColor,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Text('Start Now'),
-                  SizedBox(
-                    width: 3,
-                  ),
-                  Icon(Icons.arrow_right),
-                ],
-              ),
+              fontSize: 20,
             ),
-            const SizedBox(height: 5,),
-            SmoothPageIndicator(
-              controller: pageController, // PageController
-              count: 3,
-              effect: ExpandingDotsEffect(
-                dotHeight: 4,
-                dotWidth: 18,
-                dotColor: unselectedDotsColor,
-                activeDotColor: primaryColor,
-              ), // your preferred effect
-              onDotClicked: (index) {},
-            ),
-            const SizedBox(
-              height: 10,
-            ),
+          ),
+          onDone: () {
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) {
+              return const GenderView();
+            }));
+          },
+          next: Icon(
+            Icons.arrow_forward_rounded,
+            color: primaryColor,
+            size: 30,
+          ),
+          key: introKey,
+          globalBackgroundColor: backgroundColor,
+          autoScrollDuration: 3000,
+          dotsDecorator: DotsDecorator(
+            activeColor: primaryColor,
+            activeSize: const Size(40, 4),
+            size: const Size(12, 4),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25.0)),
+            activeShape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25.0)),
+          ),
+          pages: [
+            PageViewModel(
+                titleWidget: const Text(
+                  'MEET YOUR COACH,',
+                  style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white),
+                ),
+                bodyWidget: const Text(
+                  'START YOUR JOURNEY',
+                  style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white),
+                ),
+                decoration: const PageDecoration(
+                    bodyPadding: EdgeInsets.symmetric(
+                      vertical: 5,
+                    ),
+                    pageMargin: EdgeInsets.zero,
+                    imagePadding: EdgeInsets.zero,
+                    imageAlignment: Alignment.topCenter,
+                    imageFlex: 2,
+                    titlePadding: EdgeInsets.zero),
+                image: Image.asset(
+                  'assets/images/onboard1.png',
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                  height: MediaQuery.of(context).size.height * 0.5,
+                )),
+            PageViewModel(
+                titleWidget: const Text(
+                  'CREATE A WORKOUT PLAN',
+                  style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white),
+                ),
+                bodyWidget: const Text(
+                  'TO STAY FIT',
+                  style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white),
+                ),
+                decoration: const PageDecoration(
+                    bodyPadding: EdgeInsets.symmetric(
+                      vertical: 5,
+                    ),
+                    pageMargin: EdgeInsets.zero,
+                    imagePadding: EdgeInsets.zero,
+                    imageAlignment: Alignment.topCenter,
+                    imageFlex: 2,
+                    titlePadding: EdgeInsets.zero),
+                image: Image.asset(
+                  'assets/images/onboard2.png',
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                  height: MediaQuery.of(context).size.height * 0.5,
+                )),
+            PageViewModel(
+                titleWidget: const Text(
+                  'ACTIONS IS THE',
+                  style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white),
+                ),
+                bodyWidget: const Text(
+                  'KEY TO ALL SUCCESS',
+                  style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white),
+                ),
+                decoration: const PageDecoration(
+                    bodyPadding: EdgeInsets.symmetric(
+                      vertical: 5,
+                    ),
+                    pageMargin: EdgeInsets.zero,
+                    imagePadding: EdgeInsets.zero,
+                    imageAlignment: Alignment.topCenter,
+                    imageFlex: 2,
+                    titlePadding: EdgeInsets.zero),
+                image: Image.asset(
+                  'assets/images/onboard3.png',
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                  height: MediaQuery.of(context).size.height * 0.5,
+                )),
           ],
         ),
       ),
     );
   }
-}
-
-final List<Onboard> data = [
-  Onboard(
-    image: 'assets/images/onboard1.png',
-    description: 'MEET YOUR COACH,',
-    descriptionContinue: 'START YOUR JOURNEY',
-  ),
-  Onboard(
-    image: 'assets/images/onboard2.png',
-    description: 'CREATE A WORKOUT PLAN',
-    descriptionContinue: 'TO STAY FIT',
-  ),
-  Onboard(
-    image: 'assets/images/onboard3.png',
-    description: 'ACTIONS IS THE',
-    descriptionContinue: 'KEY TO ALL SUCCESS',
-  ),
-];
-
-class Onboard {
-  final String image, description, descriptionContinue;
-
-  Onboard({
-    required this.image,
-    required this.description,
-    required this.descriptionContinue,
-  });
 }

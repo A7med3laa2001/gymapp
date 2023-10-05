@@ -82,7 +82,8 @@ class _AgeViewBodyState extends State<AgeViewBody> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const CustomBackButton(),
-                  CustomNextButton(
+                  CustomButton(
+                    text: 'Next',
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {

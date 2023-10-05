@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gymapp/constants/colors_gym.dart';
 
-class CustomNextButton extends StatelessWidget {
-  const CustomNextButton({super.key, this.onPressed});
+class CustomButton extends StatelessWidget {
+  const CustomButton({super.key, this.onPressed, required this.text});
 
   final Function()? onPressed;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +22,13 @@ class CustomNextButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Next',
-              style: TextStyle(
+              text,
+              style: const TextStyle(
                 color: Colors.black,
                 fontSize: 22,
               ),
             ),
-            Icon(
+            const Icon(
               Icons.arrow_right_rounded,
               size: 40,
             )

@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:gymapp/constants/colors_gym.dart';
 import 'package:gymapp/shared/widgets/custom_back_button.dart';
 import 'package:gymapp/shared/widgets/custom_next_button.dart';
-import 'package:gymapp/views/goal_view/goal_view.dart';
+import 'package:gymapp/views/activity_level_view/activity_level_view.dart';
 import 'package:numberpicker/numberpicker.dart';
 
-class HeightViewBody extends StatefulWidget {
-  const HeightViewBody({super.key});
+class GoalViewBody extends StatefulWidget {
+  const GoalViewBody({super.key});
 
   @override
-  State<HeightViewBody> createState() => _HeightViewBodyState();
+  State<GoalViewBody> createState() => _GoalViewBodyState();
 }
 
-class _HeightViewBodyState extends State<HeightViewBody> {
+class _GoalViewBodyState extends State<GoalViewBody> {
   int _currentValue = 160;
 
   @override
@@ -27,7 +27,7 @@ class _HeightViewBodyState extends State<HeightViewBody> {
               flex: 2,
             ),
             const Text(
-              "WHAT'S YOUR HEIGHT?",
+              "WHAT'S YOUR GOAL?",
               style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.w800,
@@ -104,7 +104,7 @@ class _HeightViewBodyState extends State<HeightViewBody> {
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return const GoalView();
+                        return const ActivityLevelView();
                       }));
                     },
                   ),

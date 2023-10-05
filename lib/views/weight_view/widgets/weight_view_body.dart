@@ -103,7 +103,8 @@ class _WeightViewBodyState extends State<WeightViewBody> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const CustomBackButton(),
-                  CustomNextButton(
+                  CustomButton(
+                    text: 'Next',
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {

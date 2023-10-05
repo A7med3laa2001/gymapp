@@ -83,7 +83,8 @@ class _GenderViewBodyState extends State<GenderViewBody> {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(right: 30),
-                  child: CustomNextButton(
+                  child: CustomButton(
+                    text: 'Next',
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'views/gender_view/gender_view.dart';
-import 'views/login_view/login_view.dart';
-import 'views/onboarding_view/onboarding_screen.dart';
+import 'package:gymapp/views/onboarding_view/onboarding_screen.dart';
 
 void main() {
   runApp(const GymApp());
@@ -20,7 +17,7 @@ class GymApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         // useMaterial3: true,
       ),
-      home: const LoginPage(),
+      home: const OnBoardingScreen(),
     );
   }
 }
