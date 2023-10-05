@@ -17,7 +17,7 @@ class CustomNextButton extends StatelessWidget {
         ),
         onPressed: onPressed,
         color: primaryColor,
-        child: const Row(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(

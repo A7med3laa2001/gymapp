@@ -12,6 +12,8 @@ class OnBoardingScreen extends StatefulWidget {
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   late PageController pageController;
+  bool isLastPage = false;
+  int currentIndex = 0;
 
   @override
   void initState() {
@@ -43,6 +45,22 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 ),
               ),
             ),
+            MaterialButton(
+              onPressed: () {},
+              color: primaryColor,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: const [
+                  Text('Start Now'),
+                  SizedBox(
+                    width: 3,
+                  ),
+                  Icon(Icons.arrow_right),
+                ],
+              ),
+            ),
+            const SizedBox(height: 5,),
             SmoothPageIndicator(
               controller: pageController, // PageController
               count: 3,
@@ -55,7 +73,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               onDotClicked: (index) {},
             ),
             const SizedBox(
-              height: 30,
+              height: 10,
             ),
           ],
         ),
