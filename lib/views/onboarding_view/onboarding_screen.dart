@@ -60,7 +60,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           animationDuration: 500,
           dotsDecorator: DotsDecorator(
             activeColor: primaryColor,
-            activeSize: const Size(40, 4),
+            activeSize: const Size(45, 4),
             size: const Size(12, 4),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25.0)),
