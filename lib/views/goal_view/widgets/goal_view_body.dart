@@ -102,7 +102,7 @@ class _GoalViewBodyState extends State<GoalViewBody> {
                   CustomButton(
                     text: 'Next',
                     onPressed: () {
-                      Navigator.push(context,
+                      Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (context) {
                         return const ActivityLevelView();
                       }));

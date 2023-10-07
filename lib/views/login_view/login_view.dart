@@ -16,7 +16,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  bool isLogin = false;
+  bool isLogin = true;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +24,7 @@ class _LoginPageState extends State<LoginPage> {
       child: Scaffold(
         backgroundColor: backgroundColor,
         body: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
               Stack(
@@ -34,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
                     decoration: const BoxDecoration(
                         image: DecorationImage(
                             image: AssetImage('assets/images/person.png'),
-                            fit: BoxFit.fitWidth)),
+                            fit: BoxFit.cover)),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(25.0),
@@ -47,24 +48,25 @@ class _LoginPageState extends State<LoginPage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               CustomUnderLineTextButton(
+                                onTap: () {
+                                  isLogin = !isLogin;
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const SignUpPage()));
+                                  setState(() {});
+                                },
+                                text: 'Sign up',
+                                lineWidth: isLogin == false ? 60 : 0,
+                              ),
+                              CustomUnderLineTextButton(
                                 text: 'Login',
                                 onTap: () {
                                   isLogin = !isLogin;
                                   setState(() {});
                                 },
                                 lineWidth: isLogin == false ? 0 : 45,
-                              ),
-                              CustomUnderLineTextButton(
-                                onTap: () {
-                                  isLogin = !isLogin;
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => SignUpPage()));
-                                  setState(() {});
-                                },
-                                text: 'Sign up',
-                                lineWidth: isLogin == false ? 0 : 60,
                               ),
                             ],
                           ),
@@ -90,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 25, right: 2, top: 10),
+                padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
                 child: Column(
                   children: [
                     const CustomTextField(
@@ -108,9 +110,6 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     const SizedBox(
-                      height: 30,
-                    ),
-                    const SizedBox(
                       height: 20,
                     ),
                     Padding(
@@ -120,10 +119,11 @@ class _LoginPageState extends State<LoginPage> {
                         children: [
                           GestureDetector(
                             onTap: () {
-                              Navigator.pushReplacement(
+                              Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => ForgetPassword()));
+                                      builder: (context) =>
+                                          const ForgetPassword()));
                             },
                             child: Text(
                               'Forgot Password',
@@ -140,8 +140,8 @@ class _LoginPageState extends State<LoginPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          children: const [
+                        const Row(
+                          children: [
                             CustomLoginIcon(
                               icon: 'assets/icons/apple-icon.png',
                             ),

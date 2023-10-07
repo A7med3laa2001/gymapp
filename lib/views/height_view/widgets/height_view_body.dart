@@ -102,7 +102,7 @@ class _HeightViewBodyState extends State<HeightViewBody> {
                   CustomButton(
                     text: 'Next',
                     onPressed: () {
-                      Navigator.push(context,
+                      Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (context) {
                         return const GoalView();
                       }));

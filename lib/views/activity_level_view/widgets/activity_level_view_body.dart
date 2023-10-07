@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gymapp/constants/colors_gym.dart';
 import 'package:gymapp/shared/widgets/custom_back_button.dart';
 import 'package:gymapp/shared/widgets/custom_next_button.dart';
-import 'package:gymapp/views/login_view/login_view.dart';
+import 'package:gymapp/views/signup_view/signup_view.dart';
 import 'package:numberpicker/numberpicker.dart';
 
 class ActivityLevelViewBody extends StatefulWidget {
@@ -103,9 +103,9 @@ class _ActivityLevelViewBodyState extends State<ActivityLevelViewBody> {
                   CustomButton(
                     text: 'Next',
                     onPressed: () {
-                      Navigator.push(context,
+                      Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (context) {
-                        return const LoginPage();
+                        return const SignUpPage();
                       }));
                     },
                   ),

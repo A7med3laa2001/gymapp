@@ -57,7 +57,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           globalBackgroundColor: backgroundColor,
           autoScrollDuration: 3000,
           allowImplicitScrolling: true,
-          animationDuration: 500,
+          animationDuration: 400,
           dotsDecorator: DotsDecorator(
             activeColor: primaryColor,
             activeSize: const Size(45, 4),

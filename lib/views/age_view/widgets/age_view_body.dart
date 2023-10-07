@@ -85,7 +85,7 @@ class _AgeViewBodyState extends State<AgeViewBody> {
                   CustomButton(
                     text: 'Next',
                     onPressed: () {
-                      Navigator.push(context,
+                      Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (context) {
                         return const WeightView();
                       }));

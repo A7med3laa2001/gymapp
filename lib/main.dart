@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gymapp/views/onboarding_view/onboarding_screen.dart';
 import 'package:gymapp/views/splash_view/splash_view.dart';
 
 void main() {

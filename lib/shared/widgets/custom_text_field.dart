@@ -9,10 +9,14 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      style: const TextStyle(
+        color: Colors.white,
+        fontSize: 22,
+      ),
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
         hintText: text,
-        contentPadding: const EdgeInsets.only(left: 16, top: 19, bottom: 18),
+        contentPadding: const EdgeInsets.only(left: 10, top: 19, bottom: 18),
         hintStyle: const TextStyle(
           color: Colors.white,
           fontSize: 20,

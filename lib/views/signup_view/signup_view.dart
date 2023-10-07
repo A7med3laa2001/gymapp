@@ -22,6 +22,7 @@ class _SignUpPageState extends State<SignUpPage> {
       child: Scaffold(
         backgroundColor: backgroundColor,
         body: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
               Stack(
@@ -30,12 +31,10 @@ class _SignUpPageState extends State<SignUpPage> {
                     height: 500,
                     width: double.infinity,
                     decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/BackgroundSignup.png'),
-                        fit: BoxFit.fitWidth,
-                        alignment: Alignment.topCenter
-                      ),
-                    ),
+                        image: DecorationImage(
+                            image: AssetImage(
+                                'assets/images/BackgroundSignup.png'),
+                            fit: BoxFit.cover)),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(25.0),
@@ -48,24 +47,30 @@ class _SignUpPageState extends State<SignUpPage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               CustomUnderLineTextButton(
-                                text: 'Login',
                                 onTap: () {
                                   isLogin = !isLogin;
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => LoginPage()));
-                                  setState(() {});
-                                },
-                                lineWidth: isLogin == false ? 0 : 45,
-                              ),
-                              CustomUnderLineTextButton(
-                                onTap: () {
-                                  isLogin = !isLogin;
+                                          builder: (context) =>
+                                              const SignUpPage()));
                                   setState(() {});
                                 },
                                 text: 'Sign up',
-                                lineWidth: isLogin == true ? 0 : 60,
+                                lineWidth: isLogin == false ? 60 : 0,
+                              ),
+                              CustomUnderLineTextButton(
+                                text: 'Login',
+                                onTap: () {
+                                  isLogin = !isLogin;
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const LoginPage()));
+                                  setState(() {});
+                                },
+                                lineWidth: isLogin == false ? 0 : 45,
                               ),
                             ],
                           ),
@@ -73,11 +78,10 @@ class _SignUpPageState extends State<SignUpPage> {
                       ],
                     ),
                   ),
-                  Positioned(
+                  const Positioned(
                     left: 25,
-                    bottom: 100,
+                    bottom: 90,
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           'HELLO ROOKIES,',
@@ -87,11 +91,15 @@ class _SignUpPageState extends State<SignUpPage> {
                             fontWeight: FontWeight.w700,
                           ),
                         ),
+                        SizedBox(
+                          height: 15,
+                        ),
                         Text(
-                          '\nENTER YOUR INFORMATION BELOW OR \nLOGIN WITH A OTHER ACCOUNT',
+                          textAlign: TextAlign.center,
+                          'Enter your informations below or\nlogin with a other account',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 12,
+                            fontSize: 16,
                             fontWeight: FontWeight.w700,
                           ),
                         ),
@@ -101,7 +109,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 25, right: 2),
+                padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
                 child: Column(
                   children: [
                     const CustomTextField(
@@ -121,7 +129,6 @@ class _SignUpPageState extends State<SignUpPage> {
                     const SizedBox(
                       height: 30,
                     ),
-
                     const CustomTextField(
                       text: "Password again",
                       suffixIcon: Icon(
@@ -131,33 +138,29 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 50,
                     ),
-
-                    Padding(
-                      padding: const EdgeInsets.only(top: 25.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: const [
-                              CustomLoginIcon(
-                                icon: 'assets/icons/apple-icon.png',
-                              ),
-                              SizedBox(
-                                width: 20,
-                              ),
-                              CustomLoginIcon(
-                                icon: 'assets/icons/google-icon.png',
-                              ),
-                            ],
-                          ),
-                          CustomButton(
-                            text: 'Sign up',
-                            onPressed: () {},
-                          )
-                        ],
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Row(
+                          children: [
+                            CustomLoginIcon(
+                              icon: 'assets/icons/apple-icon.png',
+                            ),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            CustomLoginIcon(
+                              icon: 'assets/icons/google-icon.png',
+                            ),
+                          ],
+                        ),
+                        CustomButton(
+                          text: 'Login',
+                          onPressed: () {},
+                        )
+                      ],
                     ),
                     const SizedBox(
                       height: 15,

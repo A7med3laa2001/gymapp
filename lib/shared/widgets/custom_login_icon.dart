@@ -8,11 +8,11 @@ class CustomLoginIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      radius: 30,
+      radius: 28,
       backgroundColor: const Color(0xff3a3a3c),
       child: Image.asset(
         icon,
-        width: 35,
+        width: 32,
       ),
     );
   }

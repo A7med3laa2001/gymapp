@@ -106,7 +106,7 @@ class _WeightViewBodyState extends State<WeightViewBody> {
                   CustomButton(
                     text: 'Next',
                     onPressed: () {
-                      Navigator.push(context,
+                      Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (context) {
                         return const HeightView();
                       }));
