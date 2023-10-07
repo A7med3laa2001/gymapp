@@ -87,7 +87,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     bodyPadding: EdgeInsets.symmetric(
                       vertical: 5,
                     ),
-                    pageMargin: EdgeInsets.zero,
+                    contentMargin: EdgeInsets.zero,
                     imagePadding: EdgeInsets.zero,
                     imageAlignment: Alignment.topCenter,
                     imageFlex: 2,
@@ -117,7 +117,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     bodyPadding: EdgeInsets.symmetric(
                       vertical: 5,
                     ),
-                    pageMargin: EdgeInsets.zero,
+                    contentMargin: EdgeInsets.zero,
                     imagePadding: EdgeInsets.zero,
                     imageAlignment: Alignment.topCenter,
                     imageFlex: 2,
@@ -147,7 +147,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     bodyPadding: EdgeInsets.symmetric(
                       vertical: 5,
                     ),
-                    pageMargin: EdgeInsets.zero,
+                    contentMargin: EdgeInsets.zero,
                     imagePadding: EdgeInsets.zero,
                     imageAlignment: Alignment.topCenter,
                     imageFlex: 2,

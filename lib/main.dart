@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gymapp/views/onboarding_view/onboarding_screen.dart';
+import 'package:gymapp/views/splash_view/splash_view.dart';
 
 void main() {
   runApp(const GymApp());
@@ -17,7 +18,7 @@ class GymApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         // useMaterial3: true,
       ),
-      home: const OnBoardingScreen(),
+      home: const SplashView(),
     );
   }
 }

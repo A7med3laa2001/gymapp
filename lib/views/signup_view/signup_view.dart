@@ -4,18 +4,16 @@ import 'package:gymapp/shared/widgets/custom_login_icon.dart';
 import 'package:gymapp/shared/widgets/custom_next_button.dart';
 import 'package:gymapp/shared/widgets/custom_text_field.dart';
 import 'package:gymapp/shared/widgets/custom_underline_text_button.dart';
-import 'package:gymapp/views/signup_view/signup_view.dart';
+import 'package:gymapp/views/login_view/login_view.dart';
 
-import '../forget_password_view/forget_password.dart';
-
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignUpPageState extends State<SignUpPage> {
   bool isLogin = false;
 
   @override
@@ -32,9 +30,12 @@ class _LoginPageState extends State<LoginPage> {
                     height: 500,
                     width: double.infinity,
                     decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage('assets/images/person.png'),
-                            fit: BoxFit.fitWidth)),
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/BackgroundSignup.png'),
+                        fit: BoxFit.fitWidth,
+                        alignment: Alignment.topCenter
+                      ),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(25.0),
@@ -50,6 +51,10 @@ class _LoginPageState extends State<LoginPage> {
                                 text: 'Login',
                                 onTap: () {
                                   isLogin = !isLogin;
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => LoginPage()));
                                   setState(() {});
                                 },
                                 lineWidth: isLogin == false ? 0 : 45,
@@ -57,40 +62,46 @@ class _LoginPageState extends State<LoginPage> {
                               CustomUnderLineTextButton(
                                 onTap: () {
                                   isLogin = !isLogin;
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => SignUpPage()));
                                   setState(() {});
                                 },
                                 text: 'Sign up',
-                                lineWidth: isLogin == false ? 0 : 60,
+                                lineWidth: isLogin == true ? 0 : 60,
                               ),
                             ],
                           ),
                         ),
-                        CircleAvatar(
-                          child: Image.asset('assets/images/profile.png'),
-                        )
                       ],
                     ),
                   ),
-                  const Positioned(
+                  Positioned(
                     left: 25,
-                    bottom: 60,
-                    child: Text(
-                      'WELCOME BACK,\nSARAH',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 45,
-                        fontWeight: FontWeight.w700,
-                      ),
+                    bottom: 100,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'HELLO ROOKIES,',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 45,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        Text(
+                          '\nENTER YOUR INFORMATION BELOW OR \nLOGIN WITH A OTHER ACCOUNT',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ],
                     ),
                   )
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 25, right: 2, top: 10),
+                padding: const EdgeInsets.only(left: 25, right: 2),
                 child: Column(
                   children: [
                     const CustomTextField(
@@ -110,54 +121,43 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(
                       height: 30,
                     ),
+
+                    const CustomTextField(
+                      text: "Password again",
+                      suffixIcon: Icon(
+                        Icons.remove_red_eye_rounded,
+                        color: Color(0xff3a3a3c),
+                        size: 25,
+                      ),
+                    ),
                     const SizedBox(
                       height: 20,
                     ),
+
                     Padding(
-                      padding: const EdgeInsets.only(right: 10, bottom: 30),
+                      padding: const EdgeInsets.only(top: 25.0),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => ForgetPassword()));
-                            },
-                            child: Text(
-                              'Forgot Password',
-                              style: TextStyle(
-                                color: primaryColor,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
+                          Row(
+                            children: const [
+                              CustomLoginIcon(
+                                icon: 'assets/icons/apple-icon.png',
                               ),
-                            ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              CustomLoginIcon(
+                                icon: 'assets/icons/google-icon.png',
+                              ),
+                            ],
                           ),
+                          CustomButton(
+                            text: 'Sign up',
+                            onPressed: () {},
+                          )
                         ],
                       ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: const [
-                            CustomLoginIcon(
-                              icon: 'assets/icons/apple-icon.png',
-                            ),
-                            SizedBox(
-                              width: 20,
-                            ),
-                            CustomLoginIcon(
-                              icon: 'assets/icons/google-icon.png',
-                            ),
-                          ],
-                        ),
-                        CustomButton(
-                          text: 'Login',
-                          onPressed: () {},
-                        )
-                      ],
                     ),
                     const SizedBox(
                       height: 15,
