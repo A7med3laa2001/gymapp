@@ -140,8 +140,8 @@ class _LoginPageState extends State<LoginPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Row(
-                          children: [
+                        Row(
+                          children: const [
                             CustomLoginIcon(
                               icon: 'assets/icons/apple-icon.png',
                             ),

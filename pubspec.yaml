@@ -43,6 +43,7 @@ dependencies:
   vertical_weight_slider: ^2.5.1
   flutter_svg: ^1.1.6
   introduction_screen: ^3.1.4
+  wheel_spinner: ^0.7.2
 
 dev_dependencies:
   flutter_test:

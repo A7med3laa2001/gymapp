@@ -78,11 +78,11 @@ class _SignUpPageState extends State<SignUpPage> {
                       ],
                     ),
                   ),
-                  const Positioned(
+                  Positioned(
                     left: 25,
                     bottom: 90,
                     child: Column(
-                      children: [
+                      children: const [
                         Text(
                           'HELLO ROOKIES,',
                           style: TextStyle(
@@ -96,7 +96,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         ),
                         Text(
                           textAlign: TextAlign.center,
-                          'Enter your informations below or\nlogin with a other account',
+                          'ENTER YOUR INFORMATION BELOW OR\nLOGIN WITH A OTHER ACCOUNT',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,
@@ -143,8 +143,8 @@ class _SignUpPageState extends State<SignUpPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Row(
-                          children: [
+                         Row(
+                          children: const [
                             CustomLoginIcon(
                               icon: 'assets/icons/apple-icon.png',
                             ),
