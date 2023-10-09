@@ -6,7 +6,8 @@ import 'package:gymapp/shared/widgets/custom_text_field.dart';
 import 'package:gymapp/shared/widgets/custom_underline_text_button.dart';
 import 'package:gymapp/views/signup_view/signup_view.dart';
 
-import '../forget_password_view/forget_password.dart';
+import '../forget_password_view/forget_password_view.dart';
+import '../forget_password_view/widgets/forget_password_view_body.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -123,7 +124,7 @@ class _LoginPageState extends State<LoginPage> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          const ForgetPassword()));
+                                          const ForgetPasswordViewBody()));
                             },
                             child: Text(
                               'Forgot Password',

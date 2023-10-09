@@ -53,12 +53,12 @@ class _GoalViewBodyState extends State<GoalViewBody> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                WheelSpinner(
+                /*WheelSpinner(
                   childBuilder: (value) {
                     return Text('be better');
                   },
                 )
-                /*NumberPicker(
+                */NumberPicker(
                   selectedTextStyle: const TextStyle(
                     fontSize: 50,
                     color: Colors.white,
@@ -81,7 +81,7 @@ class _GoalViewBodyState extends State<GoalViewBody> {
                   minValue: 60,
                   maxValue: 250,
                   onChanged: (value) => setState(() => _currentValue = value),
-                )*/,
+                ),
                 const Padding(
                   padding: EdgeInsets.only(top: 25),
                   child: Text(

@@ -4,14 +4,14 @@ import 'package:gymapp/shared/widgets/custom_next_button.dart';
 import 'package:gymapp/shared/widgets/custom_text_field.dart';
 import 'package:gymapp/views/login_view/login_view.dart';
 
-class ForgetPassword extends StatefulWidget {
-  const ForgetPassword({super.key});
+class ForgetPasswordViewBody extends StatefulWidget {
+  const ForgetPasswordViewBody({super.key});
 
   @override
-  State<ForgetPassword> createState() => _ForgetPasswordState();
+  State<ForgetPasswordViewBody> createState() => _ForgetPasswordViewBodyState();
 }
 
-class _ForgetPasswordState extends State<ForgetPassword> {
+class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

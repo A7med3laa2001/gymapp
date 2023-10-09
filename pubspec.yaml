@@ -44,6 +44,7 @@ dependencies:
   flutter_svg: ^1.1.6
   introduction_screen: ^3.1.4
   wheel_spinner: ^0.7.2
+  flutter_verification_code_field: ^1.0.0
 
 dev_dependencies:
   flutter_test:
