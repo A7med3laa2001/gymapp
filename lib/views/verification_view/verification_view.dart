@@ -11,7 +11,7 @@ class VerificationView extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: backgroundColor,
-        body: VerificationBodyView(),
+        body: const VerificationViewBody(),
       ),
     );
   }

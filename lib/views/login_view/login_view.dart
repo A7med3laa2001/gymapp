@@ -5,9 +5,7 @@ import 'package:gymapp/shared/widgets/custom_next_button.dart';
 import 'package:gymapp/shared/widgets/custom_text_field.dart';
 import 'package:gymapp/shared/widgets/custom_underline_text_button.dart';
 import 'package:gymapp/views/signup_view/signup_view.dart';
-
 import '../forget_password_view/forget_password_view.dart';
-import '../forget_password_view/widgets/forget_password_view_body.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -120,11 +118,11 @@ class _LoginPageState extends State<LoginPage> {
                         children: [
                           GestureDetector(
                             onTap: () {
-                              Navigator.push(
+                              Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          const ForgetPasswordViewBody()));
+                                          const ForgetPasswordView()));
                             },
                             child: Text(
                               'Forgot Password',
@@ -141,8 +139,8 @@ class _LoginPageState extends State<LoginPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          children: const [
+                        const Row(
+                          children: [
                             CustomLoginIcon(
                               icon: 'assets/icons/apple-icon.png',
                             ),

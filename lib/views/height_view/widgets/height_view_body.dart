@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gymapp/constants/colors_gym.dart';
-import 'package:gymapp/shared/widgets/custom_back_button.dart';
 import 'package:gymapp/shared/widgets/custom_next_button.dart';
 import 'package:gymapp/views/goal_view/goal_view.dart';
 import 'package:numberpicker/numberpicker.dart';
@@ -96,9 +95,8 @@ class _HeightViewBodyState extends State<HeightViewBody> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  const CustomBackButton(),
                   CustomButton(
                     text: 'Next',
                     onPressed: () {

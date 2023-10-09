@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gymapp/constants/colors_gym.dart';
-import 'package:gymapp/shared/widgets/custom_back_button.dart';
 import 'package:gymapp/shared/widgets/custom_next_button.dart';
 import 'package:gymapp/views/activity_level_view/activity_level_view.dart';
 import 'package:numberpicker/numberpicker.dart';
-import 'package:wheel_spinner/wheel_spinner.dart';
 
 class GoalViewBody extends StatefulWidget {
   const GoalViewBody({super.key});
@@ -58,7 +56,8 @@ class _GoalViewBodyState extends State<GoalViewBody> {
                     return Text('be better');
                   },
                 )
-                */NumberPicker(
+                */
+                NumberPicker(
                   selectedTextStyle: const TextStyle(
                     fontSize: 50,
                     color: Colors.white,
@@ -102,9 +101,8 @@ class _GoalViewBodyState extends State<GoalViewBody> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  const CustomBackButton(),
                   CustomButton(
                     text: 'Next',
                     onPressed: () {

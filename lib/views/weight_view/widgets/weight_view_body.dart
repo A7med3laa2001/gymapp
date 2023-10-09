@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gymapp/constants/colors_gym.dart';
-import 'package:gymapp/shared/widgets/custom_back_button.dart';
 import 'package:gymapp/shared/widgets/custom_next_button.dart';
 import 'package:gymapp/views/height_view/height_view.dart';
 import 'package:vertical_weight_slider/vertical_weight_slider.dart';
@@ -100,9 +99,8 @@ class _WeightViewBodyState extends State<WeightViewBody> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  const CustomBackButton(),
                   CustomButton(
                     text: 'Next',
                     onPressed: () {

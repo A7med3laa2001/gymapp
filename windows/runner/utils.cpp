@@ -33,7 +33,7 @@ std::vector<std::string> GetCommandLineArguments() {
 
   // Skip the first argument as it's the binary name.
   for (int i = 1; i < argc; i++) {
-    command_line_arguments.push_back(Utf8FromUtf16(argv[i]));
+    command_line_arguments.pushReplacement_back(Utf8FromUtf16(argv[i]));
   }
 
   ::LocalFree(argv);

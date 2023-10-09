@@ -49,7 +49,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               CustomUnderLineTextButton(
                                 onTap: () {
                                   isLogin = !isLogin;
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
@@ -143,7 +143,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                         Row(
+                        Row(
                           children: const [
                             CustomLoginIcon(
                               icon: 'assets/icons/apple-icon.png',
