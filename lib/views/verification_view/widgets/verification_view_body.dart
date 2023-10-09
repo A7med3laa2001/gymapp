@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_verification_code/flutter_verification_code.dart';
 import 'package:gymapp/Constants/colors_gym.dart';
 import 'package:gymapp/shared/widgets/custom_next_button.dart';
+import 'package:gymapp/views/forget_password_view/forget_password_view.dart';
 
 class VerificationBodyView extends StatefulWidget {
   const VerificationBodyView({super.key});
@@ -21,7 +23,7 @@ class _VerificationBodyViewState extends State<VerificationBodyView> {
             IconButton(
               onPressed: () {
                 Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => LoginPage()));
+                    MaterialPageRoute(builder: (context) => ForgetPasswordViewBody()));
               },
               icon: Icon(
                 Icons.arrow_back_ios,
@@ -29,7 +31,7 @@ class _VerificationBodyViewState extends State<VerificationBodyView> {
               ),
             ),
             Text(
-              'FORGET PASSWORD?',
+              'VERIFICATION',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 30,
@@ -40,7 +42,7 @@ class _VerificationBodyViewState extends State<VerificationBodyView> {
               height: 8,
             ),
             Text(
-              'ENTER YOUR INFORMATION BELOW OR\nLOGIN WITH A OTHER ACCOUNT',
+              "CHECK YOUR EMAIL.WE'VE SENT YOU\nTHE PIN AT YOUR EMAIL.",
               style: TextStyle(
                 color: fontTextColor,
                 fontSize: 14,
@@ -50,8 +52,19 @@ class _VerificationBodyViewState extends State<VerificationBodyView> {
             SizedBox(
               height: 10,
             ),
-            const CustomTextField(
-              text: "Email",
+            VerificationCode(
+              length: 6,
+              onCompleted: (String value) {},
+              onEditing: (bool value) {},
+              underlineColor: primaryColor,
+              keyboardType: TextInputType.number,
+              isSecure: true,
+              textStyle: TextStyle(
+                color: fontTextColor,
+                fontWeight: FontWeight.bold,
+                fontSize: 30
+              ),
+              cursorColor: fontTextColor,
             ),
             SizedBox(
               height: 70,
@@ -60,11 +73,8 @@ class _VerificationBodyViewState extends State<VerificationBodyView> {
               child: TextButton(
                 onPressed: () {},
                 child: Text(
-                  'Try another way',
-                  style: TextStyle(
-                      color: primaryColor,
-                      fontSize: 14
-                  ),
+                  'Did you receive any code?',
+                  style: TextStyle(color: primaryColor, fontSize: 14),
                 ),
               ),
             ),

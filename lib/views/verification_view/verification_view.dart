@@ -1,6 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gymapp/Constants/colors_gym.dart';
+
+import 'widgets/verification_view_body.dart';
 
 class VerificationView extends StatelessWidget {
   const VerificationView({super.key});
@@ -9,8 +10,8 @@ class VerificationView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: primaryColor,
-        body: ,
+        backgroundColor: backgroundColor,
+        body: VerificationBodyView(),
       ),
     );
   }

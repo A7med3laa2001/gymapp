@@ -3,6 +3,7 @@ import 'package:gymapp/Constants/colors_gym.dart';
 import 'package:gymapp/shared/widgets/custom_next_button.dart';
 import 'package:gymapp/shared/widgets/custom_text_field.dart';
 import 'package:gymapp/views/login_view/login_view.dart';
+import 'package:gymapp/views/verification_view/verification_view.dart';
 
 class ForgetPasswordViewBody extends StatefulWidget {
   const ForgetPasswordViewBody({super.key});
@@ -66,10 +67,7 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
                     onPressed: () {},
                     child: Text(
                       'Try another way',
-                      style: TextStyle(
-                        color: primaryColor,
-                        fontSize: 14
-                      ),
+                      style: TextStyle(color: primaryColor, fontSize: 14),
                     ),
                   ),
                 ),
@@ -79,7 +77,12 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
                 Center(
                   child: CustomButton(
                     text: 'Send',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => VerificationView()));
+                    },
                   ),
                 )
               ],
